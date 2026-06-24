@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randall Advisory Group LLC | Operational Coordination & Revenue Protection</title>
+    <!-- Google Fonts Integration matching Brand Specification -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Global CSS Theme Architecture derived from Brand Specification tokens */
+        :root {  
+            --fq-brand-blue: #0D3B66;  
+            --fq-brand-teal: #008080;  
+            --fq-brand-green: #20B2AA;  
+            
+            --fq-text-main: #0D3B66;       
+            --fq-text-muted: #334E68;      
+            --fq-bg-app: #F4F9F9;          
+            
+            --fq-font-display: 'Montserrat', 'Inter', sans-serif;  
+            --fq-font-ui: 'Inter', sans-serif;  
+            --fq-font-code: 'JetBrains Mono', monospace;  
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--fq-font-ui);
+            background-color: var(--fq-bg-app);
+            color: var(--fq-text-muted);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography Baseline rules matching contrast guidelines */
+        h1, h2, h3 {
+            font-family: var(--fq-font-display);
+            color: var(--fq-text-main);
+            font-weight: 700;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #FFFFFF;
+            border-bottom: 3px solid var(--fq-brand-teal);
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(13, 59, 102, 0.05);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            color: var(--fq-text-main);
+        }
+
+        /* Hero Framework Section - Pure Enterprise Gradient (No Image File Needed) */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #0D3B66 0%, #334E68 50%, #008080 100%);
+            padding: 8rem 2rem;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            color: #F4F9F9;
+            font-weight: 400;
+        }
+
+        /* Badges for Certifications and Socioeconomic Status */
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-badge {
+            font-family: var(--fq-font-code);
+            background-color: transparent;
+            border: 1px solid var(--fq-brand-green);
+            color: #FFFFFF;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Core Focus & Capability Matrix Section */
+        .capabilities {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--fq-brand-teal);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 2.5rem;
+            border: 1px solid rgba(51, 78, 104, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(13, 59, 102, 0.05);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--fq-text-muted);
+            font-size: 1rem;
+        }
+
+        /* Contact & CTA Area */
+        .contact {
+            background-color: #FFFFFF;
+            border-top: 1px solid rgba(51, 78, 104, 0.1);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Interactive accessible button implementation from brand guidelines */
+        .stack-handoff-trigger {  
+            display: inline-block;
+            background: linear-gradient(135deg, var(--fq-brand-teal) 0%, var(--fq-brand-blue) 100%);  
+            color: #FFFFFF;  
+            font-family: var(--fq-font-ui);  
+            font-weight: 600;  
+            border-radius: 6px;  
+            padding: 12px 30px;  
+            border: none;  
+            text-decoration: none;
+            cursor: pointer;
+            transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease;  
+        }
+
+        .stack-handoff-trigger:hover {
+            opacity: 0.95;
+        }
+
+        .stack-handoff-trigger:focus-visible {  
+            outline: 3px solid var(--fq-brand-green);  
+            outline-offset: 2px;  
+            box-shadow: 0 0 0 4px var(--fq-brand-blue);  
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--fq-brand-blue);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation Layout -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="navbar-container">
+            <a href="#" class="brand-logo">Randall Advisory Group</a>
+        </div>
+    </nav>
+
+    <!-- Executive Hero Unit with clean brand gradient styling -->
+    <section class="hero" aria-label="Executive Brief">
+        <div class="hero-container">
+            <!-- Strategic Socioeconomic Identifiers -->
+            <div class="badge-container">
+                <span class="status-badge">SDVOSB CERTIFICATION IN FLIGHT</span>
+                <span class="status-badge">CAGE CODE REGISTERED</span>
+            </div>
+            <h1>Operational Coordination.<br>Consistent. Compliant.</h1>
+            <p>We build elite software engines and strategic operational guardrails that streamline compliance, eliminate execution noise, and insulate recurring revenue.</p>
+            <a href="mailto:tj@randalladvisorygroup.com" class="stack-handoff-trigger">Request Enterprise Consultation</a>
+        </div>
+    </section>
+
+    <!-- Operational Core Capability Matrix -->
+    <section class="capabilities" id="capabilities">
+        <div class="section-header">
+            <h2>Core Competencies</h2>
+        </div>
+        <div class="grid">
+            <!-- Pillar 1: Pipeline Orchestration -->
+            <div class="card">
+                <h3>Pipeline Orchestration</h3>
+                <p>We structuralize daily operations out of chaotic, un-tracked mountains of paperwork into clear, linear, prioritized task queues. Built on principles forged in elite technical structures, our systems enforce absolute compliance metrics.</p>
+            </div>
+            <!-- Pillar 2: Revenue Protection -->
+            <div class="card">
+                <h3>Revenue Protection</h3>
+                <p>We solve the risk of administrative gaps and lagging oversight by creating active structural guardrails. Our automated systems ensure critical milestones are never dropped, mitigating documentation exposure and securing predictable timelines.</p>
+            </div>
+            <!-- Pillar 3: Data Integrity Bridge -->
+            <div class="card">
+                <h3>System Infrastructure</h3>
+                <p>Utilizing high-performance database infrastructure paired with secure data parsing frameworks, we bridge reporting gaps by creating proactive real-time tracking solutions that verify operational targets ahead of validation audits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communication Engagement Area -->
+    <section class="contact">
+        <div class="contact-container">
+            <h2>Initiate an Engagement</h2>
+            <p>We selectively advise tech, operational, and healthcare organizations on complex workflow optimization and automated governance architecture.</p>
+            <a href="mailto:tj@randalladvisorygroup.com" class="stack-handoff-trigger">tj@randalladvisorygroup.com</a>
+        </div>
+    </section>
+
+    <!-- Structural Technical Footer Context -->
+    <footer>
+        <p>&copy; 2026 Randall Advisory Group LLC. All Rights Reserved. Forged in Service.</p>
+    </footer>
+
+</body>
+</html>
