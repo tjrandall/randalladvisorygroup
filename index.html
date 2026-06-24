@@ -216,6 +216,8 @@
 
         .stack-handoff-trigger:hover {
             opacity: 0.95;
+            color: #FFFFFF;
+            text-decoration: none;
         }
 
         .stack-handoff-trigger:focus-visible {  
@@ -267,7 +269,8 @@
             </div>
             <h1>Operational Coordination.<br>Consistent. Compliant.</h1>
             <p>We build elite software engines and strategic operational guardrails that streamline compliance, eliminate execution noise, and insulate recurring revenue.</p>
-            <a href="mailto:tj@randalladvisorygroup.com" class="stack-handoff-trigger">Request Enterprise Consultation</a>
+            <!-- ROT13-protected hero CTA -->
+            <a id="rag-hero-cta" href="#" class="stack-handoff-trigger" aria-label="Request Enterprise Consultation">Request Enterprise Consultation</a>
         </div>
     </section>
 
@@ -287,7 +290,7 @@
                 <h3>Revenue Protection</h3>
                 <p>We solve the risk of administrative gaps and lagging oversight by creating active structural guardrails. Our automated systems ensure critical milestones are never dropped, mitigating documentation exposure and securing predictable timelines.</p>
             </div>
-            <!-- Pillar 3: Data Integrity Bridge -->
+            <!-- Pillar 3: System Infrastructure -->
             <div class="card">
                 <h3>System Infrastructure</h3>
                 <p>Utilizing high-performance database infrastructure paired with secure data parsing frameworks, we bridge reporting gaps by creating proactive real-time tracking solutions that verify operational targets ahead of validation audits.</p>
@@ -300,7 +303,8 @@
         <div class="contact-container">
             <h2>Initiate an Engagement</h2>
             <p>We selectively advise tech, operational, and healthcare organizations on complex workflow optimization and automated governance architecture.</p>
-            <a href="mailto:tj@randalladvisorygroup.com" class="stack-handoff-trigger">tj@randalladvisorygroup.com</a>
+            <!-- ROT13-protected contact CTA -->
+            <a id="rag-contact-cta" href="#" class="stack-handoff-trigger" aria-label="Email Randall Advisory Group"></a>
         </div>
     </section>
 
@@ -308,6 +312,30 @@
     <footer>
         <p>&copy; 2026 Randall Advisory Group LLC. All Rights Reserved. Forged in Service.</p>
     </footer>
+
+    <script>
+        (function () {
+            // ROT13 decode — keeps tj@randalladvisorygroup.com out of plain-text source
+            // and away from email harvesting bots
+            function rot13(s) {
+                return s.replace(/[a-zA-Z]/g, function (c) {
+                    var b = c <= 'Z' ? 65 : 97;
+                    return String.fromCharCode(((c.charCodeAt(0) - b + 13) % 26) + b);
+                });
+            }
+
+            var addr = rot13('gw@enaqnyynqivfbeltebhc.pbz');
+
+            // Hero CTA — keeps label text, just wires up the mailto href
+            var heroCta = document.getElementById('rag-hero-cta');
+            heroCta.href = 'mailto:' + addr;
+
+            // Contact CTA — displays the decoded email address as the button label
+            var contactCta = document.getElementById('rag-contact-cta');
+            contactCta.href = 'mailto:' + addr;
+            contactCta.textContent = addr;
+        })();
+    </script>
 
 </body>
 </html>
