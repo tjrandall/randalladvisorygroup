@@ -315,8 +315,7 @@
 
     <script>
         (function () {
-            // ROT13 decode — keeps tj@randalladvisorygroup.com out of plain-text source
-            // and away from email harvesting bots
+            // ROT13 decode — protects email from scraping bots
             function rot13(s) {
                 return s.replace(/[a-zA-Z]/g, function (c) {
                     var b = c <= 'Z' ? 65 : 97;
@@ -324,7 +323,7 @@
                 });
             }
 
-            var addr = rot13('gw@enaqnyynqivfbeltebhc.pbz');
+            var addr = rot13('vasb@enaqnyynqivfbeltebhc.pbz');
 
             // Hero CTA — keeps label text, just wires up the mailto href
             var heroCta = document.getElementById('rag-hero-cta');
